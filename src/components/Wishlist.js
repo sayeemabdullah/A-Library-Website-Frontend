@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class wishlist extends Component {
+class Wishlist extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class wishlist extends Component {
     }
 }
 
-export default wishlist;
+export default Wishlist;
