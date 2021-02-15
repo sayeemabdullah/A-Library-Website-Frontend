@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from "../images/book.png";
 
 class Auth extends Component {
 
@@ -13,6 +14,11 @@ class Auth extends Component {
                 "Content-Type":"application/json",
             },
             body:JSON.stringify(this.state)
+        }).then((result)=>{
+            result.json().then((resp)=>{
+                console.log(resp.token);
+                localStorage.setItem("auth",JSON.stringify(resp.token))
+            })
         })
     }
 
@@ -27,6 +33,7 @@ class Auth extends Component {
     render() {
         return (
             <div>
+                <img src={logo} style={{height:250}} ></img>
                 <div>
                     <input type="text" placeholder="Username"
                     onChange={(e)=>{this.setState({name:e.target.value})}}

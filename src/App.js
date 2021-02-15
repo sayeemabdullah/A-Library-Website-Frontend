@@ -4,20 +4,37 @@ import { Component } from 'react';
 import { render } from '@testing-library/react';
 import Auth from './components/Auth';
 import Home from './components/Home';
+import Book from './components/Book';
+import Protected from './components/Protected';
+import Nav from './components/Nav';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-
-class App extends Component{
-  render(){
+function App(){
 
   return (
   
     <div className="App">
-      {
-        <Auth></Auth>
-      }
+      <Router>
+        <div>
+        <Nav/>
+        <Switch>
+          <Route path="/book">
+            {/* <Book /> */}
+            <Protected comp={Book}/>
+          </Route>
+          <Route path="/">
+            <Auth />
+          </Route>
+        </Switch>
+        </div>
+      </Router>
     </div>
   );
-}
 }
 
 export default App;
