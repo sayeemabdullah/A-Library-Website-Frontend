@@ -5,6 +5,7 @@ import { render } from '@testing-library/react';
 import Auth from './components/Auth';
 import Home from './components/Home';
 import Book from './components/Book';
+import Wishlist from './components/Wishlist';
 import Protected from './components/Protected';
 import Nav from './components/Nav';
 import {
@@ -23,6 +24,9 @@ function App(){
         <div>
         <Nav/>
         <Switch>
+          <Route path="/wishlist">
+            <Protected comp={Wishlist}/>
+          </Route>
           <Route path="/book">
             {/* <Book /> */}
             <Protected comp={Book}/>
