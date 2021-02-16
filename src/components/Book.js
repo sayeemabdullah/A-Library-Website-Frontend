@@ -51,7 +51,7 @@ class Book extends Component {
                       {item.publication_year}
                     </td>
                     <td>
-                      <button>Add to wishlist</button>
+                      <button>Add to Wishlist</button>
                     </td>
                   </tr>
                 </table>
