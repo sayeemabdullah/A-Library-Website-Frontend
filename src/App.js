@@ -7,6 +7,7 @@ import Book from './components/Book';
 import Wishlist from './components/Wishlist';
 import Protected from './components/Protected';
 import Nav from './components/Nav';
+import Logout from './components/Logout';
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,6 +24,9 @@ function App(){
         <div>
         <Nav/>
         <Switch>
+        <Route path="/logout">
+          <Protected comp={Logout}/>
+          </Route>
           <Route path="/wishlist">
             <Protected comp={Wishlist}/>
           </Route>

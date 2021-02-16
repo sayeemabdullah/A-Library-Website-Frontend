@@ -26,6 +26,7 @@ class Auth extends Component {
             result.json().then((resp)=>{
                 console.log(resp.token);
                 localStorage.setItem("auth",JSON.stringify(resp.token))
+                {<Redirect to="/book"></Redirect>}
             })
         })
     }

@@ -9,7 +9,7 @@ function Protected(props){
     // console.warn(auth)
 
     if (auth){
-        console.log("Auth" , auth)
+        // console.log("Auth" , auth)
         return <Comp/> 
     }
     else{
