@@ -3,7 +3,6 @@ import './App.css';
 import { Component } from 'react';
 import { render } from '@testing-library/react';
 import Auth from './components/Auth';
-import Home from './components/Home';
 import Book from './components/Book';
 import Wishlist from './components/Wishlist';
 import Protected from './components/Protected';

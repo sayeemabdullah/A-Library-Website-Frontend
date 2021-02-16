@@ -19,7 +19,6 @@ class Auth extends Component {
             method:"POST",
             headers:{
                 "Accept":"application/json",
-                "Authorization":"Basic YWRtaW46YWRtaW4=",
                 "Content-Type":"application/json",
             },
             body:JSON.stringify(this.state)
@@ -37,14 +36,14 @@ class Auth extends Component {
         fetch('http://127.0.0.1:5000/api/user',{
             method:"POST",
             headers:{
-                "Accept":"application/json",
+                // "Accept":"application/json",
                 "Content-Type":"application/json",
             },
             body:JSON.stringify(this.state)
         }).then((result)=>{
             result.json().then((resp)=>{
                 console.log(resp.token);
-                localStorage.setItem("auth",JSON.stringify(resp.token))
+                // localStorage.setItem("auth",JSON.stringify(resp.token))
             })
         })
     }
@@ -56,9 +55,9 @@ class Auth extends Component {
 
         return (
             <div>
-                {/* {
+                {
                     auth ? <Redirect to="/book"></Redirect> : null
-                } */}
+                }
                 {
                 !this.state.isRegistration?
             <div>
