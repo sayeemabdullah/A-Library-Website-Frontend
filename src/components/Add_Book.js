@@ -18,7 +18,12 @@ class Add_Book extends Component {
     }).then((result) => {
       result.json().then((resp) => {
         console.log(resp.token);
+        window.location.reload();
         // localStorage.setItem("auth",JSON.stringify(resp.token))
+        window.location.reload();
+        {
+          <Redirect to="/book"></Redirect>;
+        }
       });
     });
   }

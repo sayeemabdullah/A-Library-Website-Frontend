@@ -11,6 +11,27 @@ class Book extends Component {
     };
   }
 
+  delete_book(value) {
+    var str = "http://127.0.0.1:5000/api/book/";
+    var link = str + value;
+    console.warn("state", this.state);
+    fetch(link, {
+      method: "DELETE",
+      headers: {
+        // "Accept":"application/json",
+        "x-access-token": auth,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    }).then((result) => {
+      result.json().then((resp) => {
+        console.log(resp.token);
+        window.location.reload();
+        // localStorage.setItem("auth",JSON.stringify(resp.token))
+      });
+    });
+  }
+
   add_wishlist(value) {
     var str = "http://127.0.0.1:5000/api/wishlist/";
     var link = str + value;
@@ -81,7 +102,11 @@ class Book extends Component {
                       </button>
                     </td>
                     <td>
-                      <button>Delete Book</button>
+                      <button
+                        onClick={() => this.delete_book(item.book_public_id)}
+                      >
+                        Delete Book
+                      </button>
                     </td>
                   </tr>
                 </table>
