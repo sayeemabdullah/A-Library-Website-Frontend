@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import logo from "../images/book.png";
 
 var auth = JSON.parse(localStorage.getItem("auth"));
 
@@ -8,6 +9,27 @@ class Wishlist extends Component {
     this.state = {
       items: null,
     };
+  }
+
+  delete_wishlist(value) {
+    var str = "http://127.0.0.1:5000/api/wishlist/";
+    var link = str + value;
+    console.warn("state", this.state);
+    fetch(link, {
+      method: "DELETE",
+      headers: {
+        // "Accept":"application/json",
+        "x-access-token": auth,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    }).then((result) => {
+      result.json().then((resp) => {
+        console.log(resp.token);
+        window.location.reload();
+        // localStorage.setItem("auth",JSON.stringify(resp.token))
+      });
+    });
   }
 
   componentDidMount() {
@@ -28,6 +50,7 @@ class Wishlist extends Component {
   render() {
     return (
       <div>
+        <img src={logo} style={{ height: 150 }}></img>
         <h1>Wishlist</h1>
         {this.state.items
           ? this.state.items.map((item) => (
@@ -48,7 +71,13 @@ class Wishlist extends Component {
                       {item.publication_year}
                     </td>
                     <td>
-                      <button>Remove from Wishlist</button>
+                      <button
+                        onClick={() =>
+                          this.delete_wishlist(item.wishlist_public_id)
+                        }
+                      >
+                        Remove from Wishlist
+                      </button>
                     </td>
                   </tr>
                 </table>

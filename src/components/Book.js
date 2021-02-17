@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import logo from "../images/book.png";
 
 var auth = JSON.parse(localStorage.getItem("auth"));
 
@@ -8,6 +9,27 @@ class Book extends Component {
     this.state = {
       items: null,
     };
+  }
+
+  add_wishlist(value) {
+    var str = "http://127.0.0.1:5000/api/wishlist/";
+    var link = str + value;
+    console.warn("state", this.state);
+    fetch(link, {
+      method: "POST",
+      headers: {
+        // "Accept":"application/json",
+        "x-access-token": auth,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state),
+    }).then((result) => {
+      result.json().then((resp) => {
+        console.log(resp.token);
+        window.location.reload();
+        // localStorage.setItem("auth",JSON.stringify(resp.token))
+      });
+    });
   }
 
   componentDidMount() {
@@ -31,6 +53,7 @@ class Book extends Component {
   render() {
     return (
       <div>
+        <img src={logo} style={{ height: 150 }}></img>
         <h1>Books</h1>
         {this.state.items
           ? this.state.items.map((item) => (
@@ -51,7 +74,14 @@ class Book extends Component {
                       {item.publication_year}
                     </td>
                     <td>
-                      <button>Add to Wishlist</button>
+                      <button
+                        onClick={() => this.add_wishlist(item.book_public_id)}
+                      >
+                        Add to Wishlist
+                      </button>
+                    </td>
+                    <td>
+                      <button>Delete Book</button>
                     </td>
                   </tr>
                 </table>
