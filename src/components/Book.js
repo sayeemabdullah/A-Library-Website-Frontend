@@ -96,6 +96,7 @@ class Book extends Component {
                     </td>
                     <td>
                       <button
+                        id="button3"
                         onClick={() => this.add_wishlist(item.book_public_id)}
                       >
                         Add to Wishlist
@@ -103,6 +104,7 @@ class Book extends Component {
                     </td>
                     <td>
                       <button
+                        id="button2"
                         onClick={() => this.delete_book(item.book_public_id)}
                       >
                         Delete Book

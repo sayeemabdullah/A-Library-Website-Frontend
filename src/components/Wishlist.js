@@ -72,6 +72,7 @@ class Wishlist extends Component {
                     </td>
                     <td>
                       <button
+                        id="button2"
                         onClick={() =>
                           this.delete_wishlist(item.wishlist_public_id)
                         }

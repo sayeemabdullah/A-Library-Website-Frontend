@@ -62,7 +62,7 @@ class Add_Book extends Component {
             }}
           ></input>
           <br></br>
-          <button onClick={() => this.addbook()}>Add</button>
+          <button onClick={() => this.addbook()}>Add Book</button>
         </div>
       </div>
     );

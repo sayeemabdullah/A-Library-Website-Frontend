@@ -47,3 +47,40 @@ table, th, td {
 table {
   width: 100%;
 }
+
+th, td {
+  width: 25% ;
+}
+
+button {
+  background-color: #555555; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 50%;
+}
+
+#button2{
+  background-color: red;
+  width:auto
+}
+
+#button3{
+  background-color: seagreen;
+  width: auto;
+}
+
+input{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}

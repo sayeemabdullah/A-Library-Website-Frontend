@@ -97,7 +97,7 @@ class Auth extends Component {
               ></input>{" "}
               <br></br>
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 onChange={(e) => {
                   this.setState({ password: e.target.value });
