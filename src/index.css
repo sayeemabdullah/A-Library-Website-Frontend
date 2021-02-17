@@ -76,6 +76,12 @@ button {
   width: auto;
 }
 
+#button4{
+  background-color:teal;
+  width: auto;
+}
+
+
 input{
   width: 50%;
   padding: 12px 20px;
@@ -83,4 +89,10 @@ input{
   box-sizing: border-box;
   border: 2px solid red;
   border-radius: 4px;
+}
+
+
+#link1{
+  color: white;
+  text-decoration: none;
 }

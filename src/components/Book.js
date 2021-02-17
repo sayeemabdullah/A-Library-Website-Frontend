@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "../images/book.png";
+import { Redirect, Link } from "react-router-dom";
 
 var auth = JSON.parse(localStorage.getItem("auth"));
 
@@ -101,6 +102,11 @@ class Book extends Component {
                       >
                         Add to Wishlist
                       </button>
+                    </td>
+                    <td>
+                      <Link to={"/editbook/" + item.book_public_id} id="link1">
+                        <button id="button4">Edit Book </button>
+                      </Link>
                     </td>
                     <td>
                       <button
