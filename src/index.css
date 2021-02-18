@@ -81,6 +81,11 @@ button {
   width: auto;
 }
 
+#button5{
+  background-color: red;
+  width: 10%;
+}
+
 
 input{
   width: 50%;
@@ -96,3 +101,5 @@ input{
   color: white;
   text-decoration: none;
 }
+
+label { display: inline-block; width: 10%; }
