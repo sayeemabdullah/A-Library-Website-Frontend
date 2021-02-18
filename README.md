@@ -43,7 +43,7 @@ After adding to your wishlist you can see your book list here and can also remov
 
 **Add Book** page is for **Admin Only** but if you are general user you can visit the page and try to add books but unfortunately you cannot.
 
-And something I almost forgot to mention if you are not logged inyou cannot go to any other tabs/pages. If you try to you will get a message shown in the below figure.
+And something I almost forgot to mention if you are not logged in you cannot go to any other tabs/pages. If you try to you will get a message shown in the below figure.
 
 ![alt-text](https://github.com/sayeemabdullah/A-Library-Website-Frontend/blob/main/src/Screenshots/home_alert.png "Alert")
 
